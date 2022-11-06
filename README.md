@@ -4,9 +4,7 @@
 **저탄소생활 실천 도우미, 탄소 중립을 위한 탄소 배출 관리 웹사이트 "Net-Zero"**
 <br>
 <br>
-
-![earth](https://user-images.githubusercontent.com/94836793/200189481-65e14aea-12a1-4d16-8199-c755d349b59a.jpg)
-
+<img src ="https://user-images.githubusercontent.com/94836793/200189481-65e14aea-12a1-4d16-8199-c755d349b59a.jpg" width="500" height="350">
 
 Team: ELEVEN (noeych, wngml02)
 <br>
