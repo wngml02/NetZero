@@ -10,4 +10,4 @@ Earth Lost Environmental Value Effect Network
 <br>
 : Network for the Earth's Lost Environmental Value Creation Effect
 <br>
-/t  지구의 잃어버린 환경적 가치 창출 효과를 위한 네트워크
+지구의 잃어버린 환경적 가치 창출 효과를 위한 네트워크
