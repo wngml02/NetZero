@@ -5,7 +5,8 @@
 <br>
 <br>
 
-![poster](/NetZero/earth.jpg)
+![earth](https://user-images.githubusercontent.com/94836793/200189481-65e14aea-12a1-4d16-8199-c755d349b59a.jpg)
+
 
 Team: ELEVEN (noeych, wngml02)
 <br>
