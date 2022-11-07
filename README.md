@@ -18,7 +18,6 @@
 <br>
 
 ## 🙎🏻‍♀️ Contributors
----------------------------------
 ## Team **ELEVEN** (noeych, wngml02)
 
 ### **E**arth **L**ost **E**nvironmental **V**alue **E**ffect **N**etwork
