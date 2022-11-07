@@ -17,7 +17,7 @@
 <br>
 
 ## 🙎🏻‍♀️ Contributors
-## Team **ELEVEN** (noeych, wngml02)
+Team **ELEVEN** (noeych, wngml02)
 ### **E**arth **L**ost **E**nvironmental **V**alue **E**ffect **N**etwork
 > Network for the Earth's Lost Environmental Value Creation Effect
 <br>
