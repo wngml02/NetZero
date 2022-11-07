@@ -9,7 +9,6 @@
 <br>
 
 ## 📋 Project information
--------------------------------
 <!---- ### 📍 2022 행정안전부 데이터 분석 및 활용 공모전 --->
 ### 📍 프로젝트 기간: 2022.11.05~
 
@@ -19,7 +18,6 @@
 
 ## 🙎🏻‍♀️ Contributors
 ## Team **ELEVEN** (noeych, wngml02)
-
 ### **E**arth **L**ost **E**nvironmental **V**alue **E**ffect **N**etwork
 > Network for the Earth's Lost Environmental Value Creation Effect
 <br>
@@ -29,7 +27,6 @@
 <br>
 
 ## 📁 Project Demo
---------------------------------
 
 
 <br>
@@ -38,7 +35,7 @@
 
 
 ## 🛠 Tech Stack
-------------------------------------
+
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
 <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
@@ -49,7 +46,7 @@
 <br>
 
 ## 📌 License
-------------------------------------
+
 ![Project License](https://img.shields.io/github/license/rhea-so-lab/Good-README.md-Template)
 <br>
 프로젝트에는 [MIT](./LICENSE) 라이선스가 적용되어있습니다.
