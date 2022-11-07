@@ -20,7 +20,6 @@
 ### Team **ELEVEN** (noeych, wngml02)
 #### **E**arth **L**ost **E**nvironmental **V**alue **E**ffect **N**etwork
 > Network for the Earth's Lost Environmental Value Creation Effect
-<br>
 지구의 잃어버린 환경적 가치 창출 효과를 위한 네트워크
 
 <br>
