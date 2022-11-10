@@ -21,6 +21,6 @@ from netapp.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.index),
-    path('post/', views.post),
+    path('', views.index),
+    path('postapp/', views.post),
 ]
