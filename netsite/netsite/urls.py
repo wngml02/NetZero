@@ -18,7 +18,9 @@ from django.urls import path
 from netapp import views
 from netapp.views import index
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('netapp/',views.index),
+    path('',views.index),
+    path('post/', views.post),
 ]
