@@ -2,6 +2,7 @@ from django.shortcuts import render
 import requests
 import json
 import pandas as pd
+import csv
 import numpy as np
 from pandas.io.json import json_normalize
 import os
@@ -14,9 +15,9 @@ from folium import plugins
 def post(request):
   return render(request, 'postapp/post.html')
 
-state_geo = 'TL_SCCO_SIG_WGS84.json'
+state_geo = './postapp/TL_SCCO_SIG_WGS84.json'
 
-state_carbon = './carbon_data_real.csv'
+state_carbon = './postapp/static/data/carbon_data_real.csv'
 state_data = pd.read_csv(state_carbon, encoding='EUC-KR')
 state_data.columns = ['Region','CO2','CH4','N2O','Total']
 state_data.head(1)
