@@ -11,6 +11,9 @@ from django.shortcuts import render
 from folium import plugins
 from pandas.io.json import json_normalize
 
+def post(request):
+  return render(request, 'postapp/post.html')
+
 month = '2022-11-12'
 column_list = ['Region', 'Carbon']
 state_carbon = './postapp/static/data/carbon_data_real.csv'
