@@ -31,10 +31,10 @@ m.choropleth(
   data=state_data,
   columns=['Region','CO2','CH4','N2O','Total'],
   key_on = 'feature.properties.SIG_CD',
-  fill_color='YlGn',
+  fill_color='Blues',
   fill_opacity=0.7,
   line_opacity=0.3,
-  color='gray',
+  color='grey',
   legend_name='carbon'
 )
 
