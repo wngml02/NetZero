@@ -18,7 +18,7 @@ month = '2022-11-12'
 column_list = ['Region', 'Carbon']
 state_carbon = './postapp/static/data/carbon_data_real.csv'
 df = pd.read_csv(state_carbon, encoding='euc-kr')
-df.columns = column_list
+df.columns = column_list['Region']
 
 state_geo = './postapp/static/data/TL_SCCO_SIG_WGS84.json'
 json_data = open(state_geo, encoding='utf-8').read()
