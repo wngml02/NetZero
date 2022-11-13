@@ -27,13 +27,17 @@
           }
 
           input[type=checkbox] {
-
+            accent-color: green;
             width: 15px;
             height:15px;
+          }
+          
+          #check_in{
+            line-height:40px
             
           }
-          #check_in{
-            line-height:30px
+          #check_in label{
+            font-size: 15px;
           }
         </style>
     </head>
@@ -94,9 +98,9 @@
                             <input type="number" name="meat" min="0.5" max="30" value="0" step ="0">인분을 섭취했다.(0.5인분부터!)
                             
                             <br>
-                            <input type ="checkbox" name = "eat4" value ="on"> 커피를 <input type="number" name="coffee" min="100" max="3000" value="0" step ="10">ml을 섭취했다.
-                            <br>
-                            참고> 일반 종이컵 사이즈: 200ml, 프랜차이즈 카페 tall 사이즈: 355ml
+                            <input type ="checkbox" id ="cafe" name = "eat4" value ="on"> 커피를 <input type="number" name="coffee" min="100" max="3000" value="0" step ="10">ml을 섭취했다.
+                            <label for="cafe">
+                            </label>
                             <br>
                             <input type ="checkbox" name = "activity1" value ="on"> 교통수단
                             <select name ="trans">
