@@ -1,0 +1,22 @@
+<!-- header.html : 로그인/로그아웃 버튼 만들기 -->
+<div style = "text-align:center; margin: 2rem 0; ;" >
+  <div>
+      <h1 style = "font-family: 'BIZ UDGothic', sans-serif;">Pragmatic</h1>
+  </div>
+  <div>
+      <span>nav1</span>
+      <span>nav2</span>
+      <span>nav3</span>
+
+      {% if not user.is_authenticated %}
+<!--     login하고 나서 그다음에 연결되어야 하는 경로를 next로 적어준다. -->
+      <a href = "{% url 'users : login' %}?next ={{ request.path }}" >
+          <span>login</span>    
+      </a>
+      {% else %}
+      <a href = "{% url 'users : logout' %}?next ={{ request.path }}">
+          <span>logout</span>    
+      </a>
+      {% endif %}
+  </div>
+</div>
