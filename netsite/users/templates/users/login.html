@@ -1,11 +1,48 @@
+<script>
+    $.ajaxSetup({
+      headers: { "X-CSRFToken": '{{csrf_token}}' }
+    });
+  </script>
+
+<script>
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+  
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+  </script>
+
 <!-- posttwoapp>login.html -->
 
-% extends 'base.html' %
-% block content %
+{% extends 'base.html' %}
+{% block content %}
 
 <h1>로그인</h1>
-<form method = "post" action = "{% url 'posttwoapp:login" %}>
-    % csrf_token %
+<form method = "post" action = "{% url 'users:login' %}">
+    {% csrf_token %}
     <div>
         <label>사용자 ID</label>
         <input type = "text" name = "username" id = "username">
@@ -17,17 +54,17 @@
     <button type = "submit">로그인</button>
 </form>
 
-% endblock %
+{% endblock %}
 
-<form method="post" action=""{%url 'users:login'%}>
-    % csrf_token %
-    % include 'users/form_errors.html' %
+<form method="post" action="{%url 'users:login'%}">
+    {% csrf_token %}
+    {% include 'users/form_errors.html' %}
     <div>
         <lable>사용자 ID</lable>
     </div>
 </form>
 
-% endblock %
+{% endblock %}
 
 
 
