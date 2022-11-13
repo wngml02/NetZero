@@ -31,13 +31,25 @@
             width: 15px;
             height:15px;
           }
-          
+          .check{
+            padding: 20px 20px;
+            background-color: lightyellow;
+            border-radius: 5%;
+          }
+          .check h1{
+            background-color: rgb(255, 255, 124);
+            background-size: 50%;
+            padding: 0px 20px;
+            text-align: center;
+          }
           #check_in{
             line-height:40px;
+            
           }
 
           #check_in label{
             font-size: 15px;
+            
           }
           
         </style>
@@ -66,7 +78,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>나의 탄소 다이어리
+                            <h1>나의 탄소 다이어리📝
                             </h1>
                             <h2 class="subheading">스스로 하루 탄소소비에 대해 기록하면서
                                 <br> 탄소중립운동에 참여해봅시다~</h2>
@@ -83,8 +95,9 @@
         <article class="mb-4">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7" id = "check">
-                        <h1>체크리스트</h1>
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                      <div class = "check">
+                        <h1>✔체크리스트✔</h1>
                         <form id = "check_in">
                             <input type ="checkbox" name = "eat1" value ="on"> 밥을 <input type="number" name="rice" min="0.5" max="10" value="0" step ="0">공기를 섭취했다. (0.5인분부터!)
                             <br>
@@ -132,6 +145,7 @@
                             <br>
                             <input type="submit" name = "save" value="저장">
                         </form>
+                      </div>
                         <button type="button" onclick="location.href='/users' ">로그인하기</button>
                         <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
                         <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
