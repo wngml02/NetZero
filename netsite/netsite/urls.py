@@ -29,4 +29,5 @@ urlpatterns = [
     path('aboutapp/',include('aboutapp.urls')),
     path('contactapp/',include('contactapp.urls')),
     path('foliumapp/',include('foliumapp.urls')),
+    path('users/',include('users.urls')),
 ]
