@@ -20,7 +20,7 @@
         {%bootstrap_css%}
         {%bootstrap_javascript%}
         <style>
-          input[type="number"] {
+          input[type="number"], #checksave {
             width: 50px;
             height: 23px;
             padding: 1px;
@@ -146,7 +146,7 @@
                             <br>
                             <input type ="checkbox" name = "elec3" value ="on"> 샤워를  <input type="number" name="water_min" min="1" max="1440" value="0" step ="1">분 했다.
                             <br>
-                            <input type="submit" name = "save" value="저장">
+                            <input type="submit" id="checksave"name = "save" value="저장">
                         </form>
                         <br>
                         <br>
