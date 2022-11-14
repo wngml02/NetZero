@@ -6,6 +6,6 @@ def posttwo(request):
 
 def my_view(request):
   if request.method == 'POST':
-    eat1 = request.POST.getlist('eat1')
-    print(eat1)
+    checksave = request.POST.getlist('checksave')
+    print(checksave)
   return render(request, 'post2.html')
