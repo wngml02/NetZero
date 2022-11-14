@@ -11,6 +11,19 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        </head>
+        <script>
+          $(function(){
+              setTimeout(function(){
+                var output='';
+                $('input:checked').each(function(index,item){
+                  output += $(item).val()+',';
+              });
+              alert('나는 오늘 '+output.substring(0,output.length-3)+'');
+            }, 3000);
+        });
+        </script>
+
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&family=Poor+Story&display=swap" rel="stylesheet">
@@ -118,7 +131,7 @@
                         </div>
                         <div class ="signClass">
                         {% if not user.is_authenticated %}
-                        <button type ="submit" value="회원가입" class="sign" onclick="location.href = '/signup'">회원가입</button>
+                        <button type ="submit" value="회원가입" class="sign" onclick="location.href = '/users/signup'">회원가입</button>
                         {% endif %}
                       </div>
                       <div class = "check">
