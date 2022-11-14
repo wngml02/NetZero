@@ -22,7 +22,7 @@
         <style>
           input[type="number"], #checksave {
             width: 50px;
-            height: 23px;
+            height: 20px;
             padding: 1px;
             line-height: 15px;
             margin: 3px 0;
@@ -50,11 +50,20 @@
             
           }
 
-          #check_in label{
+          .checksaveClass{
             font-size: 15px;
-            
+            line-height:30px;
+            text-align: center;
           }
-          
+          .loginorlogout{
+            text-align: center;
+          }
+
+          .loginorlogout button{
+            text-align: center;
+            background-color: green;
+          }
+
         </style>
     </head>
     <body>
@@ -99,6 +108,14 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
+                      <div class = "loginorlogout">
+                      <button type = "submit" value="로그인" class="btn btn-primary" onclick="location.href='/users'">로그인</button>
+                          {% if user.is_authenticated %}
+                          <a href = "{% url 'users:logout' %}">{{user.username}}로그아웃</a>
+                          <span>||</span>
+                          <a href="{% url 'users:login'%}">로그인하기!</a>
+                          {% endif %}
+                      </div>  
                       <div class = "check">
                         <h1>✔체크리스트✔</h1>
                         <form id = "check_in">
@@ -146,19 +163,16 @@
                             <br>
                             <input type ="checkbox" name = "elec3" value ="on"> 샤워를  <input type="number" name="water_min" min="1" max="1440" value="0" step ="1">분 했다.
                             <br>
-                            <input type="submit" id="checksave"name = "save" value="저장">
+                            <br>
+                            <div class="checksaveClass">
+                              <lable for ="checksave"> 👇체크 한번 더 확인하고 저장 버튼을 눌러주세요!👇</label>
+                              <br>
+                              <input type="submit" id="checksave"name = "save" value="저장">
+                            </div>
                         </form>
                         <br>
                         <br>
                       </div>
-                    <div class = "loginorlogout">
-                    <button type = "submit" value="로그인" class="btn btn-primary" onclick="location.href='/users'">로그인</button>
-                        {% if user.is_authenticated %}
-                        <a href = "{% url 'users:logout' %}">{{user.username}}로그아웃</a>
-                        <span>||</span>
-                        <a href="{% url 'users:login'%}">로그인하기!</a>
-                        {% endif %}
-                    </div>
                     
                         
                         <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
