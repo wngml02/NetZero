@@ -6,5 +6,5 @@ app_name = "posttwoapp"
 
 urlpatterns = [    
   path("", views.posttwo), 
-  path('posttwoapp/', views.posttwo),
+  path("posttwoapp/", views.posttwo),
 ]
