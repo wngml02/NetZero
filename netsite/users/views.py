@@ -16,13 +16,13 @@ def search(request):
 
 def signup(request):
     if request.method == 'POST':
-      if request.POST['password1'] == request.POST['password2']:
-        user = User.objects.create_user(
-          username = request.POST['username'],
-          password = request.POST['password1'],
-          email = request.POST['email'],
-        )
+      form = UserForm(request.POST)
+      if form.is_valid():
+        form.save()
+        username= form.cleaned_data.get['username']
+        raw_password = form.cleaned_data.get('password1')
+        user = authenticate(username=username,password=raw_password)
+        login(request, user)
+        return redirect('index')
         auth.login(request, user)
-        return redirect('/')
-      return render(request, 'signup.html')
-    return render(request, 'signup.html')
+    
