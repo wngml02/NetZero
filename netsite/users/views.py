@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from users.forms import UserForm
 
 # Create your views here.
 def login(request):
@@ -23,6 +24,7 @@ def signup(request):
         raw_password = form.cleaned_data.get('password1')
         user = authenticate(username=username,password=raw_password)
         login(request, user)
-        return redirect('index')
-        auth.login(request, user)
-    
+        return redirect('posttwo')
+      else:
+        form = UserForm()
+      return render(request, 'users/signup.html', {'form':form})
