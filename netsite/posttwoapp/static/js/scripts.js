@@ -28,3 +28,15 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+
+function getCheckboxValue() {
+    const query = 'input[name="eat1"]:checked';
+    const selectedEls = document.querySelectorAll(query);
+
+    let result = '';
+    selectedEls.forEach((el) => {
+
+    });
+
+    document.getElementById('result').innerText = result;
+}
