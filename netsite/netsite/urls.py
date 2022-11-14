@@ -30,4 +30,5 @@ urlpatterns = [
     path('contactapp/',include('contactapp.urls')),
     path('foliumapp/',include('foliumapp.urls')),
     path('users/',include('users.urls')),
+    path('users/signup/',include('users.urls')),
 ]
