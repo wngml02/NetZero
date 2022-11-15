@@ -26,7 +26,7 @@ def search(request):
 
 def signup(request):
     if request.method == 'POST':
-      if request.POST['password'] == request.POST['confirm']:
+      if request.POST['password'] == request.POST['password']:
         user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
         auth.login(request, user)
         return redirect('/')
