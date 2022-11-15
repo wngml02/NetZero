@@ -25,12 +25,26 @@ def search(request):
   return HttpResponse('success')
 
 def signup(request):
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)  # 사용자 인증
+            login(request, user)  # type: ignore # 로그인
+            return redirect('index')
+    else:
+        form = UserForm()
+    return render(request, 'users/signup.html', {'form': form})
+
+""" def signup(request):
     if request.method == 'POST':
       if request.POST['password'] == request.POST['password']:
         user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
         auth.login(request, user)
         return redirect('/')
-    return render(request, 'users/signup.html')
+    return render(request, 'users/signup.html') """
 
 def logout(request):
   if request.method == 'POST':
