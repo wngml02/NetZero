@@ -14,24 +14,26 @@ from pandas.io.json import json_normalize
 from folium.plugins import HeatMap
   
 def show_map():
-        state_geo = "foliumapp/Si_Do.json"
-        state_unemployment = 'foliumapp/Si_Do.csv'
-        state_data = pd.read_csv(state_unemployment)
+  
+        state_geo = "foliumapp/plz.zip.geojson"
+        state_geo2 = json.load(open(state_geo, encoding='utf-8'))
+
+        state_data = open('foliumapp/Si_Do.csv', 'r',encoding='cp949')
         m = folium.Map(location=[36.45, 127.42], zoom_start=5)
-        m.choropleth(
+        folium.Choropleth(
             geo_data = state_geo,
             name='choropleth',
             data=state_data,
-            columns=['State','Unemployment'],
+            columns=['State','carbon'],
             key_on = 'feature.id',
             fill_color = 'YlGn',
             fill_opacity=0.7,
             line_opacity=0.2,
             legent_name='Rate (%)'
-        )
+        ).add_to(m)
         folium.LayerControl().add_to(m)
         m.save('foliumapp/templates/foliumapp/foliummm.html')
 
 def foliumm(request):
   show_map()
-  return render(request, 'foliumapp/foliummm.html')
+  return render(request, 'foliumapp/templates/foliumapp/foliummm.html')
