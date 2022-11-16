@@ -19,7 +19,7 @@ def show_map():
   jsonFile = 'foliumapp/Sidojson.json'
   Sido_geo = json.load(open(jsonFile, encoding='utf-8'))
   
-  m=folium.Map(location=[36.45,127.42],title="OpenStreetMap",zoom_start=8)
+  m=folium.Map(location=[36.45,127.42],title="OpenStreetMap",zoom_start=20)
   folium.Choropleth(
     geo_data=Sido_geo,
     name="carbonmap",
