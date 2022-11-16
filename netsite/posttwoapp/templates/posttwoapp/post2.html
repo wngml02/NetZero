@@ -138,12 +138,12 @@
                       </div>
                       <div class = "check">
                         <h1>✔체크리스트✔</h1>
-                        <form id = "check_in">
-                            <input type ="checkbox" name = "eat1" value ="on"> 밥을 <input type="number" name="rice" min="0" max="10" value="0" step ="0.5">공기를 섭취했다. (0.5인분부터!)
+                        <form action="" method="GET" id = "check_in">
+                            <input type ="checkbox" name = "eat[]" value ="on"> 밥을 <input type="number" name="rice" min="0" max="10" value="0" step ="0.5">공기를 섭취했다. (0.5인분부터!)
                             <br>
-                            <input type ="checkbox" name = "eat2" value ="on"> 계란을 <input type="number" name="egg" min="0" max="30" value="0">개를 섭취했다.
+                            <input type ="checkbox" name = "eat[]" value ="on"> 계란을 <input type="number" name="egg" min="0" max="30" value="0">개를 섭취했다.
                             <br>
-                            <input type ="checkbox" name = "eat3" value ="on"> 고기를
+                            <input type ="checkbox" name = "eat[]" value ="on"> 고기를
                             <select name ="eat_select">
                                 <option value = "cow"> 소 </option>
                                 <option value = "pig"> 돼지 </option>
@@ -187,18 +187,15 @@
                             <div class="checksaveClass">
                                 <lable for ="checksave"> 👇체크 한번 더 확인하고 저장 버튼을 눌러주세요!👇</label>
                                 <br>
-                                <button id="checksave"name = "save" value="저장" onclick = "getCheckboxValue()" >저장</button>
+                                <button id="checksave" name = "save" value="저장" onclick = "getItem()" >저장</button>
                                 <div id="result"></div>
                             </div>
                         </form>
                         <br>
                         <br>
+                        <h1>오늘 내가 소비한 탄소는?</h1>
+                        <iframe id= 'calc' src = '/calcapp' title ="calc" width="150%" height="200px"></iframe>
                         </div>
-                    
-                        
-                        <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
-                        <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-                        </p>
                     </div>
                 </div>
             </div>

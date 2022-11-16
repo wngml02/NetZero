@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'contactapp',
     'foliumapp',
     'users',
+    'calcapp',
 ]
 
 MIDDLEWARE = [

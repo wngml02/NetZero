@@ -31,4 +31,5 @@ urlpatterns = [
     path('foliumapp/',include('foliumapp.urls')),
     path('users/',include('users.urls')),
     path('users/signup/',include('users.urls')),
+    path('calcapp/', include('calcapp.urls')),
 ]

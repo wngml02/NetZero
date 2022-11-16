@@ -4,7 +4,7 @@ from django.shortcuts import render
 def posttwo(request):
   return render(request, 'posttwoapp/post2.html')
 
-def my_view(request):
+'''def my_view(request):
   if request.method == 'POST':
     checksave = request.POST.getlist('checksave')
     print(checksave)
@@ -13,5 +13,5 @@ def my_view(request):
 def input_test(request):
   if request.POST:
     list_item = request.POST.getlist('test')
-    print(list_item)
+    print(list_item)'''
     
