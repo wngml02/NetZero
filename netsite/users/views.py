@@ -9,15 +9,15 @@ from users.forms import UserForm
 
 # Create your views here.
 def login(request):
-  if request.method == 'POST':
+  if request.method == "POST":
     username = request.POST['username']
     password = request.POST['password']
     user = auth.authenticate(request, username=username, password=password)
     if user is not None:
       auth.login(request, user)
       return redirect('/')
-    else:
-      return render(request, 'users/login.html', {'error': 'username or password is incorrect'})
+  else:
+    return render(request, 'users/login.html', {'error': 'username or password is incorrect'})
   return render(request, 'users/login.html')
 
 @csrf_exempt
@@ -32,11 +32,11 @@ def signup(request):
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)  # 사용자 인증
-            login(user)  # type: ignore # 로그인
-        return redirect('/')
+            auth.login(request,user)  # type: ignore # 로그인
+            return redirect('/')
     else:
       form = UserForm()
-    return render(request, 'users/signup.html', {'form': form})
+      return render(request, 'users/signup.html', {'form': form})
 
 """ def signup(request):
     if request.method == 'POST':
