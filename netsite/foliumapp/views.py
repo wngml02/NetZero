@@ -32,7 +32,6 @@ def show_map():
   folium.LayerControl().add_to(m)
   
   m.save('foliumapp/map.html')
-  webbrowser.open('foliumapp/map.html')
 
 def foliumm(request):
   show_map()

@@ -133,7 +133,7 @@
                         </div>
                         <div class ="signClass">
                           {% if not user.is_authenticated %}
-                          <button type ="submit" value="회원가입" class="sign" onclick="location.href = '/users/signup'">회원가입</button>
+                          <a href='/users/signup' value="회원가입" class="sign">회원가입</a>
                           {% endif %}
                       </div>
                       <div class = "check">
