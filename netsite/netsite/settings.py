@@ -136,4 +136,8 @@ STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static'),
 )
 LOGIN_REDIRECT_URL = "/posttwoapp"
-LOGOUT_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/posttwoapp"
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+)

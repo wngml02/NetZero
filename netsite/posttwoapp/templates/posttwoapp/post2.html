@@ -11,6 +11,19 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        </head>
+        <script>
+          $(function(){
+              setTimeout(function(){
+                var output='';
+                $('input:checked').each(function(index,item){
+                  output += $(item).val()+',';
+              });
+              alert('나는 오늘 '+output.substring(0,output.length-3)+'');
+            }, 3000);
+        });
+        </script>
+
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&family=Poor+Story&display=swap" rel="stylesheet">
@@ -55,13 +68,15 @@
             line-height:30px;
             text-align: center;
           }
-          .loginorlogout{
+          .loginorlogout, .signClass{
             text-align: center;
           }
 
-          .loginorlogout button{
+          .loginorlogout button, .signClass button{
             text-align: center;
             background-color: green;
+            color: white;
+            outline: 0;
           }
 
         </style>
@@ -108,20 +123,25 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                      <div class = "loginorlogout">
-                      <button type = "submit" value="로그인" class="btn btn-primary" onclick="location.href='/users'">로그인</button>
-                          {% if user.is_authenticated %}
-                          <a href = "{% url 'users:logout' %}">{{user.username}}로그아웃</a>
-                          <span>||</span>
-                          <a href="{% url 'users:login'%}">로그인하기!</a>
+                        <div class = "loginorlogout">
+                            {% if user.is_authenticated %}
+                            <a href = "{% url 'users:logout' %}">{{user.username}}로그아웃</a>
+                            <span>||</span>
+                            {%else%}
+                            <button type = "submit" value="로그인" class="btn btn-primary" onclick="location.href='/users'">로그인</button>
+                            {% endif %}
+                        </div>
+                        <div class ="signClass">
+                          {% if not user.is_authenticated %}
+                          <button type ="submit" value="회원가입" class="sign" onclick="location.href = '/users/signup'">회원가입</button>
                           {% endif %}
-                      </div>  
+                      </div>
                       <div class = "check">
                         <h1>✔체크리스트✔</h1>
                         <form id = "check_in">
-                            <input type ="checkbox" name = "eat1" value ="on"> 밥을 <input type="number" name="rice" min="0.5" max="10" value="0" step ="0">공기를 섭취했다. (0.5인분부터!)
+                            <input type ="checkbox" name = "eat1" value ="on"> 밥을 <input type="number" name="rice" min="0" max="10" value="0" step ="0.5">공기를 섭취했다. (0.5인분부터!)
                             <br>
-                            <input type ="checkbox" name = "eat2" value ="on"> 계란을 <input type="number" name="egg" min="1" max="30" value="0">개를 섭취했다.
+                            <input type ="checkbox" name = "eat2" value ="on"> 계란을 <input type="number" name="egg" min="0" max="30" value="0">개를 섭취했다.
                             <br>
                             <input type ="checkbox" name = "eat3" value ="on"> 고기를
                             <select name ="eat_select">
@@ -129,10 +149,10 @@
                                 <option value = "pig"> 돼지 </option>
                                 <option value = "chicken"> 닭 </option>
                             </select>을
-                            <input type="number" name="meat" min="0.5" max="30" value="0" step ="0">인분을 섭취했다.(0.5인분부터!)
+                            <input type="number" name="meat" min="0" max="30" value="0" step ="0.5">인분을 섭취했다.(0.5인분부터!)
                             
                             <br>
-                            <input type ="checkbox" id ="cafe" name = "eat4" value ="on"> 커피를 <input type="number" name="coffee" min="100" max="3000" value="0" step ="10">ml을 섭취했다.
+                            <input type ="checkbox" id ="cafe" name = "eat4" value ="on"> 커피를 <input type="number" name="coffee" min="0" max="3000" value="0" step ="10">ml을 섭취했다.
                             <label for="cafe">
                             </label>
                             <br>
@@ -142,9 +162,9 @@
                                 <option value = "car"> 지하철 </option>
                                 <option value = "car"> 버스 </option>
                             </select>을
-                            <input type="number" name="trans_min" min="1" max="1440" value="0" step ="1">분 이용했다.
+                            <input type="number" name="trans_min" min="0" max="1440" value="0" step ="1">분 이용했다.
                             <br>
-                            <input type ="checkbox" name = "activity2" value ="on"> 쓰레기를 <input type="number" name="trash" min="1" max="50" value="0" step ="1">L을 배출했다. 
+                            <input type ="checkbox" name = "activity2" value ="on"> 쓰레기를 <input type="number" name="trash" min="0" max="50" value="0" step ="1">L을 배출했다. 
                             <br>
                             <input type ="checkbox" name = "activity3" value ="on"> 전자기기
                             <select name ="device">
@@ -153,26 +173,27 @@
                                 <option value = "smart"> 스마트폰 </option>
                                 <option value = "tv"> TV </option>
                             </select>을
-                            <input type="number" name="device_min" min="1" max="1440" value="0" step ="1">분 이용했다.
+                            <input type="number" name="device_min" min="0" max="1440" value="0" step ="1">분 이용했다.
                             <br>
-                            <input type ="checkbox" name = "activity4" value ="on"> 화장실을 <input type="number" name="toilet" min="1" max="30" value="0" step ="1">번 사용했다. 
+                            <input type ="checkbox" name = "activity4" value ="on"> 화장실을 <input type="number" name="toilet" min="0" max="30" value="0" step ="1">번 사용했다. 
                             <br>
-                            <input type ="checkbox" name = "elec1" value ="on"> 전등을 <input type="number" name="light_min" min="1" max="1440" value="0" step ="1">분 켜두었다.
+                            <input type ="checkbox" name = "elec1" value ="on"> 전등을 <input type="number" name="light_min" min="0" max="1440" value="0" step ="1">분 켜두었다.
                             <br>
-                            <input type ="checkbox" name = "elec2" value ="on"> 보일러 사용을 <input type="number" name="heat_min" min="1" max="1440" value="0" step ="1">분 사용했다.
+                            <input type ="checkbox" name = "elec2" value ="on"> 보일러 사용을 <input type="number" name="heat_min" min="0" max="1440" value="0" step ="1">분 사용했다.
                             <br>
-                            <input type ="checkbox" name = "elec3" value ="on"> 샤워를  <input type="number" name="water_min" min="1" max="1440" value="0" step ="1">분 했다.
+                            <input type ="checkbox" name = "elec3" value ="on"> 샤워를  <input type="number" name="water_min" min="0" max="1440" value="0" step ="1">분 했다.
                             <br>
                             <br>
                             <div class="checksaveClass">
-                              <lable for ="checksave"> 👇체크 한번 더 확인하고 저장 버튼을 눌러주세요!👇</label>
-                              <br>
-                              <input type="submit" id="checksave"name = "save" value="저장">
+                                <lable for ="checksave"> 👇체크 한번 더 확인하고 저장 버튼을 눌러주세요!👇</label>
+                                <br>
+                                <button id="checksave"name = "save" value="저장" onclick = "getCheckboxValue()" >저장</button>
+                                <div id="result"></div>
                             </div>
                         </form>
                         <br>
                         <br>
-                      </div>
+                        </div>
                     
                         
                         <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
