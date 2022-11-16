@@ -9,3 +9,9 @@ def my_view(request):
     checksave = request.POST.getlist('checksave')
     print(checksave)
   return render(request, 'post2.html')
+
+def input_test(request):
+  if request.POST:
+    list_item = request.POST.getlist('test')
+    print(list_item)
+    
