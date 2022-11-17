@@ -1,12 +1,39 @@
 {% load django_bootstrap5 %}
 {% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+<style>
+  h1{
+    text-align: center;
+    font-family: "Poor Story", -apple-system, BlinkMacSystemFont;
+  }
+  h3{
+    color: green;
+    text-align: center;
+    font-family: "Poor Story", -apple-system, BlinkMacSystemFont;
+  }
+  .mb-3{
+    text-align: center;
+    font-family: "Poor Story", -apple-system, BlinkMacSystemFont;
+    
+  }
+  .create button{
+    border-radius: 10%;
+    color: white;
+    text-align: center;
+    background-color: green;
+    font-family: "Poor Story", -apple-system, BlinkMacSystemFont;
+    padding: 5px 10px;
+  }
+</style>
 <div class="wrapper" style="text-align: center;">
   <div class="container my-3">
     <form method="post" action="{% url 'users:signup'%}">
         {% csrf_token %}
         {% include "users/form_errors.html" %}
         <div class="mb-3">
-            <label for="username">사용자 이름</label>
+            <h1>회원가입하기</h1>
+            <h3>탄소중립 캠페인 함께해요🙋‍♀️</h3>
+            <label for="username">사용자ID</label>
             <input type="text" class="form-control" name="username" id="username"
                     value="{{form.username.value|default_if_none:''}}">
         </div>
@@ -25,7 +52,8 @@
             <input type="text" class="form-control" name="email" id="email"
                     value="{{form.email.value|default_if_none:''}}">
         </div>
-        <button type="submit" class="btn btn-primary">생성하기</button>
+        <div class="create">
+        <button type="submit" class="btn btn-primary">생성하기</button></div>
     </form>
 </div>
 {% endblock %}

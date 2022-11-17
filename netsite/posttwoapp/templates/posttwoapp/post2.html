@@ -12,7 +12,7 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         </head>
-        <script>
+        <!--<script>
           $(function(){
               setTimeout(function(){
                 var output='';
@@ -22,17 +22,19 @@
               alert('나는 오늘 '+output.substring(0,output.length-3)+'');
             }, 3000);
         });
-        </script>
+        </script>-->
 
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&family=Poor+Story&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles_posttwo.css' %}" rel="stylesheet" />
         {%bootstrap_css%}
         {%bootstrap_javascript%}
         <style>
+
           input[type="number"], #checksave {
             width: 50px;
             height: 20px;
@@ -105,7 +107,7 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>나의 탄소 다이어리📝
+                            <h1 style="font-height: bold;">나의 탄소 다이어리📝
                             </h1>
                             <h2 class="subheading">스스로 하루 탄소소비에 대해 기록하면서
                                 <br> 탄소중립운동에 참여해봅시다~</h2>

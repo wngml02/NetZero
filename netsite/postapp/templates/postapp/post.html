@@ -16,7 +16,18 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href= "{% static 'css/styles.css' %}" rel="stylesheet" />
         <script src = "js/jquery.min.js"></script>
+        <style>
+            .carborn{
+                font-size: 17px;
+                line-height: 20px;
+            }
+            .carborn_head{
+              font-size: 20px;
+              font-weight: bold;
+            }
+        </style>
     </head>
+    
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -41,9 +52,9 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>탄소배출 한번에 보기
+                            <h1>전국 탄소배출량 한번에 보기👀
                             </h1>
-                            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+                            <h2 class="subheading">Get Carbon Emissions Information</h2>
                             <span class="meta">
                             </span>
                         </div>
@@ -56,18 +67,24 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <h1>지도 보여주기</h1>
+                        <h1>탄소배출량 지도</h1>
                         <iframe id= 'map' src = '/foliumapp' title ="map" width="100%" height="300px"></iframe>
-                        <h2 class="section-heading">지도 설명</h2>
-                        <br> 온실가스 배출량 (단위: Gg CO2eq)
+                        <br>
+                        <h2 class="section-heading">탄소배출량 데이터 분석 결과</h2>
+                        <img class="fit-picture"
+                        src="/postapp/image1.jpg"
+                        alt="">
+                        <br>
+                        <h2 class="section-heading">지도 정보</h2>
+                        <div class="carborn">
+                        <div class="carborn_head"> 온실가스 배출량 (단위: Gg CO2eq)</div>
                         <br> 서울 - 27978.77 <br> 부산 - 14579.32 <br> 대구 - 8625.06 <br>
                         인천 - 53558.05 <br> 광주 - 5776.18 <br> 대전 - 5880.99 <br>
                         울산 - 38467.86 <br> 세종 - 2157.65 <br> 경기 - 85109.06 <br>
                         강원 - 50033.5 <br> 충북 - 27723.55 <br> 충남 - 154754.8 <br>
                         전북 - 13891.96 <br> 전남 - 90996.32 <br> 경북 - 58051.14 <br>
                         경남 - 59184.25 <br> 제주 - 4601.95 <br> <br>
-                        <br>
-                        <h2 class="section-heading"></h2>
+                        </div>
                         <span class="caption text-muted"></span>
                     </div>
                 </div>
